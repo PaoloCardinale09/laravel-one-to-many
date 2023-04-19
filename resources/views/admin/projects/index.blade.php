@@ -18,6 +18,7 @@
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Name</th>
+              <th scope="col">Type</th>
               <th scope="col">Tecnology</th>
               <th scope="col">Actions</th>
          
@@ -29,6 +30,7 @@
             <tr>
                 <th scope="row"> {{ $project->id }} </th>
                 <td>{{ $project->name }}</td>
+                <td>{{ $project->type?->label }}</td> 
                 <td>{{ $project->technology }}</td>
                 <td class="d-flex gap-3 ">
                     <a href=" {{ route('admin.projects.show', $project) }} "><i class="bi bi-info-circle"></i></a>

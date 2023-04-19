@@ -42,7 +42,9 @@ class ProjectController extends Controller
             'technology' => 'required|string|max:50',
             'description' => 'required|string|max:1000',
             'url'=> 'url|max:100',
-            'image' => 'nullable|image|mimes:jpg,png,jpeg'
+            'image' => 'nullable|image|mimes:jpg,png,jpeg',
+            'type_id' => 'nullable|exists:types,id'
+
         ],
         [
             'name.required' => 'Il nome del progetto è obbligatorio',  
@@ -54,7 +56,9 @@ class ProjectController extends Controller
             'url.url'=> 'Deve essere un link valido',
             'url.max'=> 'L\' URL può avere un massimo di 100 caratteri',
             'image.image' => 'Il file caricato deve essere un\' immagine',
-            'image.mimes' => 'Le estensione consentite per l\'immagine sono: jpg,png,jpeg'
+            'image.mimes' => 'Le estensione consentite per l\'immagine sono: jpg,png,jpeg',
+            'type_id.exists' => 'L\'id del Tipo non è valido', 
+
         ]);
 
         $data = $request->all();
@@ -98,7 +102,8 @@ class ProjectController extends Controller
             'technology' => 'required|string|max:50',
             'description' => 'required|string|max:1000',
             'url'=> 'url|max:100',
-            'image' => 'nullable|image|mimes:jpg,png,jpeg'
+            'image' => 'nullable|image|mimes:jpg,png,jpeg',
+            'type_id' => 'nullable|exists:types,id'
         ],
         [
             'name.required' => 'Il nome del progetto è obbligatorio',  
@@ -110,7 +115,8 @@ class ProjectController extends Controller
             'url.url'=> 'Deve essere un link valido',
             'url.max'=> 'L\' URL può avere un massimo di 100 caratteri',
             'image.image' => 'Il file caricato deve essere un\' immagine',
-            'image.mimes' => 'Le estensione consentite per l\'immagine sono: jpg,png,jpeg'
+            'image.mimes' => 'Le estensione consentite per l\'immagine sono: jpg,png,jpeg',
+            'type_id.exists' => 'L\'id del Tipo non è valido', 
         ]);
 
 
