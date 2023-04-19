@@ -41,6 +41,23 @@
 
             <div class="row">
               <div class="col-2 mb-4">
+                <label class="form-label" for="name">Type</label>
+              </div>
+              <div class="col-10">
+                
+                <select class="form-select" >
+                  <option value="">No type selected</option>
+                  @foreach ($types as $type)
+                    <option value=" {{ $type->id }} "> {{ $type->label }} </option>
+                      
+                  @endforeach
+                </select>
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-2 mb-4">
                 <label class="form-label" for="technology">Technology</label>
               </div>
               <div class="col-10">

@@ -23,7 +23,7 @@
                     </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in!!') }}
                 </div>
                 <a href="  {{ route('admin.projects.index') }}">
                  <img class="img-fluid" src="https://www.nicepng.com/png/full/111-1112693_portfolio-my-portfolio.png" alt="">

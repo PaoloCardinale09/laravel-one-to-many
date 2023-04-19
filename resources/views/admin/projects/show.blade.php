@@ -31,6 +31,7 @@
         <hr>
         <h4> <a href=" {{ $project->url }} ">{{ $project->url }} </a>  </h4>
     </div>
+
 </section>
     
 @endsection
