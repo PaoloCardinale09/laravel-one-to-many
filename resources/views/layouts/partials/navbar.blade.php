@@ -17,10 +17,13 @@
                 
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('dashboard') }}">{{ __('Home') }}</a>
+                    <a class="nav-link @if (request()->routeIs('admin.home')) active @endif " href="{{route('dashboard') }}">{{ __('Home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('admin.projects.index') }}">{{ __('Projects') }}</a>
+                    <a class="nav-link @if (request()->routeIs('admin.projects.index')) active @endif" href="{{route('admin.projects.index') }}">{{ __('Projects') }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @if (request()->routeIs('admin.types.index')) active @endif" href="{{route('admin.types.index') }}">{{ __('Types') }}</a>
                 </li>
             </ul>
             

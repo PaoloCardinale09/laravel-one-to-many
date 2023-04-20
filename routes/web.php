@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\Guest\HomeController as GuestHomeController;
 
 use Illuminate\Support\Facades\Route;
@@ -22,11 +23,21 @@ Route::get('/', [GuestHomeController::class, 'index']);
 
 Route::get('/dashboard', [AdminHomeController::class, 'index'])->middleware('auth')->name('dashboard');
 
+
+
+
+
 Route::middleware('auth')
     ->prefix('/admin')
     ->name('admin.')
     ->group(function(){
+
+        // Project resource
         Route::resource('projects', ProjectController::class);
+
+        // Type resource
+        Route::resource('types', TypeController::class)->except(['show']);
+
     });
 
 Route::middleware('auth')

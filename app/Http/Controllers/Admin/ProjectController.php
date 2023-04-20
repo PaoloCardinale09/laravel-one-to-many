@@ -131,7 +131,8 @@ class ProjectController extends Controller
 
         $data = $data;
         $project->update($data);
-        return redirect()->route('admin.projects.show', $project);
+        return redirect()->route('admin.projects.show', $project)
+        ->with('message_content', "Project $project->id creato con successo");
     }
 
     /**
